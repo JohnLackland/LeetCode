@@ -7,34 +7,57 @@
         public static int Logic1(int[] height)
         {
             var result = 0;
+            var highestLeft = new int[height.Length];
+            var highestRight = new int[height.Length];
+
+
+            for (int i = 0; i < height.Length; i++)
+            {
+                if(i == 0)
+                    highestLeft[i] = height[i];
+                else
+                    highestLeft[i] = Math.Max(height[i], highestLeft[i - 1]);
+            };
+
+            for (int i = height.Length - 1; i >= 0; i--)
+            {
+                if (i == height.Length - 1)
+                    highestRight[i] = height[i];
+                else
+                    highestRight[i] = Math.Max(height[i], highestRight[i + 1]);
+            };
+
+            for (int i = 0; i < height.Length; i++)
+            {
+                var lowerWall = Math.Min(highestLeft[i], highestRight[i]);
+                var waterAmount = lowerWall - height[i];
+                result += waterAmount > 0 ? waterAmount : 0;
+            }
 
             return result;
         }
 
-        //O(1) space complexity
+         //O(1) space complexity
         public static int Logic2(int[] height)
         {
             var result = 0;
-            var leftHighest = height[0];
-            var rightHighest = height[^1];
-            var left = 0;
-            var right = height.Length - 1;
+            var left = 0; var right = height.Length - 1;
+            var maxleft = height[0];
+            var maxright = height[^1];
             while (left < right)
             {
-                if (rightHighest >= leftHighest)
+                if (maxleft <= maxright)
                 {
-                    result += Math.Max(0, leftHighest - height[left]);
-                    leftHighest = Math.Max(leftHighest, height[left]);
-                    left++;    
+                    left++;
+                    maxleft = Math.Max(maxleft, height[left]);
+                    result += maxleft - height[left];
                 }
-                else
-                { 
-                    result += Math.Max(0, rightHighest - height[right]);
-                    rightHighest = Math.Max(rightHighest, height[right]);
+                else {
                     right--;
+                    maxright = Math.Max(maxright, height[right]);
+                    result += maxright - height[right];
                 }
             }
-
             return result;
         }
     }
