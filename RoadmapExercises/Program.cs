@@ -18,6 +18,7 @@ namespace RoadmapExercises
             TrappingRainWater.Logic1(new int[] { -1, 0, 1, 2, -1, -4 });
             LongestSubstringWithoutRepeatingCharacters.Logic3("pwwkew");
             LongestRepeatingCharacterReplacement.Logic1("AABABBA", 1);
+            SlidingWindowMaximum.Logic1(new int[] { 1, -1 }, 1);
         }
     }
 }
