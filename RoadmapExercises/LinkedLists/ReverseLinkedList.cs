@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RoadmapExercises.LinkedLists
+﻿namespace RoadmapExercises.LinkedLists
 {
+    //https://leetcode.com/problems/reverse-linked-list/
     public static class ReverseLinkedList
     {
         //Iterative
@@ -28,21 +23,14 @@ namespace RoadmapExercises.LinkedLists
         //Recursive
         public static ListNode Logic2(ListNode head)
         {
-            var temp = head.next;
-            
-            return Logic1(head);
-        }
-
-        public class ListNode
-        {
-            public int val;
-            public ListNode next;
-
-            public ListNode(int val = 0, ListNode next = null)
+            if (head.next == null)
             {
-                this.val = val;
-                this.next = next;
+                return head;
             }
+
+            ListNode newHead = Logic2(head.next);
+            head.next.next = head;
+            return newHead;
         }
     }
 }
