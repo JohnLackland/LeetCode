@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadmapExercises", "RoadmapExercises\RoadmapExercises.csproj", "{79A75621-2E33-41B3-8C13-EE1CD40F2600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomExercises", "RandomExercises\RandomExercises.csproj", "{FF6CE518-DE54-4C4B-8FCC-C9C64F36752A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RandomExercises", "RandomExercises\RandomExercises.csproj", "{FF6CE518-DE54-4C4B-8FCC-C9C64F36752A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{92445B83-D6A1-442C-ABED-FBFEF1FD41D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FF6CE518-DE54-4C4B-8FCC-C9C64F36752A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF6CE518-DE54-4C4B-8FCC-C9C64F36752A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF6CE518-DE54-4C4B-8FCC-C9C64F36752A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92445B83-D6A1-442C-ABED-FBFEF1FD41D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92445B83-D6A1-442C-ABED-FBFEF1FD41D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92445B83-D6A1-442C-ABED-FBFEF1FD41D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92445B83-D6A1-442C-ABED-FBFEF1FD41D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
