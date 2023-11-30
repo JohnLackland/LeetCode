@@ -1,14 +1,10 @@
 ﻿namespace DataStructures
 {
-    public class DynamicArray
+    public class DynamicArray(int capacity = 10)
     {
-        private int[] _arr;
-        private int _lastIndex;
-
-        public DynamicArray(int capacity = 10)
-        {
-                _arr = new int[capacity];
-        }
+        private int[] _arr = new int[capacity];
+        private int _length = 0;
+        private int _capacity = capacity;
 
         public int Get(int index)
         {
@@ -20,35 +16,46 @@
             _arr[index] = num;
         }
 
-        public void Pushback(int n)
+        public void PushBack(int n)
         {
-            if(_arr.Length - 1 == _lastIndex)
+            if (_length == _capacity)
                 Resize();
-            _arr[++_lastIndex] = n;
+
+            _arr[_length] = n;
+            _length++;
         }
 
-        public int Popback()
+        public int PopBack()
         {
-            int removedNum = _arr[_lastIndex];
-            _arr[--_lastIndex] = 0;
-            return removedNum;
+            if (_length > 0)
+            {
+                int removedNum = _arr[_length - 1];
+                _arr[_length - 1] = 0;
+                _length--;
+                return removedNum;
+            }
+            return _arr[0];
         }
 
         public void Resize()
         {
-            var resizedArr = new int[_arr.Length * 2];
-            Array.Copy(_arr, resizedArr, _lastIndex);
-            _arr = resizedArr;
+            _capacity *= 2;
+            int[] newArr = new int[_capacity];
+            for (int i = 0; i < _length; i++)
+            {
+                newArr[i] = _arr[i];
+            }
+            _arr = newArr;
         }
 
         public int GetSize()
         {
-            return _lastIndex + 1;
+            return _length;
         }
 
         public int GetCapacity()
         {
-            return _arr.Length;
+            return _capacity;
         }
     }
 }
