@@ -1,4 +1,6 @@
-﻿namespace RoadmapExercises.LinkedLists
+﻿using RoadmapExercises.LinkedLists.Nodes;
+
+namespace RoadmapExercises.LinkedLists
 {
     //https://leetcode.com/problems/reverse-linked-list/
     public static class ReverseLinkedList

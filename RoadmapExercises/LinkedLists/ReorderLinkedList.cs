@@ -1,4 +1,6 @@
-﻿namespace RoadmapExercises.LinkedLists
+﻿using RoadmapExercises.LinkedLists.Nodes;
+
+namespace RoadmapExercises.LinkedLists
 {
     //https://leetcode.com/problems/reorder-list/
     public static class ReorderLinkedList

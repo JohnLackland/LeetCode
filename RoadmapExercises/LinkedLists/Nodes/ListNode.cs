@@ -1,4 +1,4 @@
-﻿namespace RoadmapExercises.LinkedLists
+﻿namespace RoadmapExercises.LinkedLists.Nodes
 {
     public class ListNode
     {
