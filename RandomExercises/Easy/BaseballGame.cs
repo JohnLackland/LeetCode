@@ -35,49 +35,5 @@ namespace RandomExercises.Easy
 
             return result;
         }
-
-        public static int Logic1(string[] operations)
-        {
-            var result = 0;
-            var firstValueFromBack = 0;
-            var secondValueFromBack = 0;
-            var thirdValueFromBack = 0;
-            for (int i = 0; i < operations.Length; i++)
-            {
-                if (int.TryParse(operations[i], out int value))
-                {
-                    thirdValueFromBack = secondValueFromBack;
-                    secondValueFromBack = firstValueFromBack;
-                    firstValueFromBack = value;
-                    result += firstValueFromBack;
-                    continue;
-                }
-
-                if (operations[i] == "+")
-                {
-                    var sumOfPreviousTwo = firstValueFromBack + secondValueFromBack;
-                    thirdValueFromBack = secondValueFromBack;
-                    secondValueFromBack = firstValueFromBack;
-                    firstValueFromBack = sumOfPreviousTwo;
-                    result += firstValueFromBack;
-
-                }
-                else if (operations[i] == "D")
-                {
-                    thirdValueFromBack = secondValueFromBack;
-                    secondValueFromBack = firstValueFromBack;
-                    firstValueFromBack = secondValueFromBack * 2;
-                    result += firstValueFromBack;
-                }
-                else
-                {
-                    result -= firstValueFromBack;
-                    firstValueFromBack = secondValueFromBack;
-                    secondValueFromBack = thirdValueFromBack;
-                }
-            }
-
-            return result;
-        }
     }
 }
